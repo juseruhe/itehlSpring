@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.curso.api.desarrollo.models.Pais;
 import com.curso.api.desarrollo.service.PaisService;
 
-@CrossOrigin(origins="http://localhost:4200",maxAge=3600)
+
 @RestController
 @RequestMapping({"/paises"})
 public class PaisController {
