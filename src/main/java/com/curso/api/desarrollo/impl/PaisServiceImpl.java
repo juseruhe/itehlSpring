@@ -26,6 +26,17 @@ public class PaisServiceImpl implements PaisService{
 	   return repository.save(p);
 	}
 
+	@Override
+	public Pais mostrarPais(int id) {
+	
+		return  repository.findById(id);
+	}
+
+	@Override
+	public Pais actualizarPais(Pais p) {
+		return repository.save(p);
+	}
+
 	
 
 }
