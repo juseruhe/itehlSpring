@@ -10,5 +10,5 @@ public interface PaisService {
    Pais mostrarPais(int id);
 	Pais insertarPais(Pais p);
 	Pais actualizarPais(Pais p);
-//	Pais eliminarPais(int id);
+	Pais eliminarPais(int id);
 }

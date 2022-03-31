@@ -37,6 +37,16 @@ public class PaisServiceImpl implements PaisService{
 		return repository.save(p);
 	}
 
+	@Override
+	public Pais eliminarPais(int id) {
+		Pais p = repository.findById(id);
+		if(p != null) {
+			repository.delete(p);
+		}
+		
+		return p;
+	}
+
 	
 
 }

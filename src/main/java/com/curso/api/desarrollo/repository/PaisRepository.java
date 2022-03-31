@@ -11,6 +11,6 @@ public interface PaisRepository extends Repository<Pais,Integer>{
 	List<Pais> findAll();
  Pais findById(int id);
 Pais save(Pais p);
-//	void delete(Pais p);
+void delete(Pais p);
 	
 }
