@@ -10,4 +10,5 @@ public interface ModalidadService {
 	Modalidad insertarModalidad(Modalidad m);
 	Modalidad mostrarModalidad(int id);
 	Modalidad actualizarModalidad(Modalidad m);
+	Modalidad eliminarModalidad(int id);
 }

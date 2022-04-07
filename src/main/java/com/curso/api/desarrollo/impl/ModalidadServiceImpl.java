@@ -37,6 +37,18 @@ public class ModalidadServiceImpl implements ModalidadService {
 		return repository.save(m);
 	}
 
+	@Override
+	public Modalidad eliminarModalidad(int id) {
+	  Modalidad m =repository.findById(id);
+	  if(m != null) {
+		  repository.delete(m);
+	  }
+	  
+	  return m;
+	}
+
+	
+
 	
 
 }

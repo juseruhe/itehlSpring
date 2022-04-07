@@ -11,6 +11,6 @@ public interface ModalidadRepository extends Repository<Modalidad,Integer> {
 	List<Modalidad> findAll();
 	Modalidad save(Modalidad m);
 	Modalidad findById(int id);
-	
+	void delete(Modalidad m);
 
 }

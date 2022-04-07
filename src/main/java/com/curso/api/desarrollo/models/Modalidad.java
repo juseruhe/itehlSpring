@@ -1,11 +1,17 @@
 package com.curso.api.desarrollo.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="modalidades")
@@ -18,6 +24,11 @@ public class Modalidad {
 	
 	@Column
 	private String nombre;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "modalidad" )
+	private List<Curso> cursos;
+	
 
 	public int getId() {
 		return id;
@@ -34,6 +45,16 @@ public class Modalidad {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public List<Curso> getCursos() {
+		return cursos;
+	}
+
+	public void setCursos(List<Curso> cursos) {
+		this.cursos = cursos;
+	}
+	
+	
 	
 	
 }
