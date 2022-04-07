@@ -31,4 +31,19 @@ public class CursoServiceImpl implements CursoService {
 		return repository.findById(id);
 	}
 
+	@Override
+	public Curso actualizarCurso(Curso c) {
+       return repository.save(c);
+	}
+
+	@Override
+	public Curso eliminarCurso(int id) {
+	   Curso c = repository.findById(id);
+	   if(c != null) {
+		   repository.delete(c);
+	   }
+	   
+	   return c;
+	}
+
 }

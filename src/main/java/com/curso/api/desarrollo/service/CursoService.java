@@ -9,4 +9,6 @@ public interface CursoService {
 	List<Curso> mostrarCursos();
 	Curso insertarCurso(Curso c);
 	Curso mostrarCurso(int id);
+	Curso actualizarCurso(Curso c);
+	Curso eliminarCurso(int id);
 }
