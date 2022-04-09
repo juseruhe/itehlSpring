@@ -1,5 +1,7 @@
 package com.curso.api.desarrollo.models;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "cursos")
@@ -34,6 +39,10 @@ private String dirigido_a;
 @ManyToOne()
 @JoinColumn(name="modalidad_id")
 private Modalidad modalidad;
+
+@JsonIgnore
+@OneToMany(mappedBy = "curso" )
+private List<Descuento> descuentos;
 
 public int getId() {
 	return id;
@@ -82,6 +91,15 @@ public Modalidad getModalidad() {
 public void setModalidad(Modalidad modalidad) {
 	this.modalidad = modalidad;
 }
+
+public List<Descuento> getDescuentos() {
+	return descuentos;
+}
+
+public void setDescuentos(List<Descuento> descuentos) {
+	this.descuentos = descuentos;
+}
+
 
 
 }

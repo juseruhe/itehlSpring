@@ -1,6 +1,10 @@
 package com.curso.api.desarrollo.models;
 
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="paises")
@@ -13,6 +17,10 @@ public class Pais {
 	
 	@Column
 	private String nombre;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "pais" )
+	private List<Descuento> descuentos;
 
 	public int getId() {
 		return id;
