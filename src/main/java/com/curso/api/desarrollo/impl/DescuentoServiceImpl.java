@@ -20,4 +20,15 @@ public class DescuentoServiceImpl implements DescuentoService {
 	  return repository.findAll();
 	}
 
+	@Override
+	public Descuento insertarDescuento(Descuento d) {
+	   
+		return d;
+	}
+
+  
+
+	
+	
+
 }

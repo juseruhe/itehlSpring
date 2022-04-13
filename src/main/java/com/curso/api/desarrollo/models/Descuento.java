@@ -26,10 +26,7 @@ public class Descuento {
 	@Column
 	private int descuento;
 	
-	@ManyToOne()
-	@JoinColumn(name="curso_id")
-	private Curso curso;
-	
+
 	@ManyToOne()
 	@JoinColumn(name="pais_id")
 	private Pais pais;
@@ -52,14 +49,6 @@ public class Descuento {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public Curso getCurso() {
-		return curso;
-	}
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
 	}
 
 	public Pais getPais() {

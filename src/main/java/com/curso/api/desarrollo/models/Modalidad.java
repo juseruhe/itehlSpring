@@ -24,11 +24,6 @@ public class Modalidad {
 	
 	@Column
 	private String nombre;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "modalidad" )
-	private List<Curso> cursos;
-	
 
 	public int getId() {
 		return id;
@@ -46,13 +41,7 @@ public class Modalidad {
 		this.nombre = nombre;
 	}
 
-	public List<Curso> getCursos() {
-		return cursos;
-	}
 
-	public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
-	}
 	
 	
 	

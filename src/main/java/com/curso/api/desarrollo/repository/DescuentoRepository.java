@@ -9,5 +9,5 @@ import com.curso.api.desarrollo.models.Descuento;
 public interface DescuentoRepository extends Repository<Descuento,Integer> {
 
 	  List<Descuento> findAll();
-	  Descuento insertarDescuento(Descuento d);
+	  Descuento save(Descuento d);
 }

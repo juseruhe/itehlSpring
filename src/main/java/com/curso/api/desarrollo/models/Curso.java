@@ -36,13 +36,6 @@ private String descripcion;
 @Column
 private String dirigido_a;
 
-@ManyToOne()
-@JoinColumn(name="modalidad_id")
-private Modalidad modalidad;
-
-@JsonIgnore
-@OneToMany(mappedBy = "curso" )
-private List<Descuento> descuentos;
 
 public int getId() {
 	return id;
@@ -82,22 +75,6 @@ public String getDirigido_a() {
 
 public void setDirigido_a(String dirigido_a) {
 	this.dirigido_a = dirigido_a;
-}
-
-public Modalidad getModalidad() {
-	return modalidad;
-}
-
-public void setModalidad(Modalidad modalidad) {
-	this.modalidad = modalidad;
-}
-
-public List<Descuento> getDescuentos() {
-	return descuentos;
-}
-
-public void setDescuentos(List<Descuento> descuentos) {
-	this.descuentos = descuentos;
 }
 
 
