@@ -24,6 +24,10 @@ public class Modalidad {
 	
 	@Column
 	private String nombre;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "modalidad" )
+	private List<CursoModalidad> cursos_modalidades;
 
 	public int getId() {
 		return id;

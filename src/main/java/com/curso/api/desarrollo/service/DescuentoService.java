@@ -6,6 +6,6 @@ import com.curso.api.desarrollo.models.Descuento;
 
 public interface DescuentoService {
 
-	public List<Descuento> mostrarDescuentos();
-	public Descuento insertarDescuento(Descuento d);
+ List<Descuento> mostrarDescuentos();
+ Descuento insertarDescuento(Descuento d);
 } 
