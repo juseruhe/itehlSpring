@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,5 +33,12 @@ public class DescuentoController {
 	public  DescuentoCU insertarDescuento(@RequestBody DescuentoCU d) {
 		d.setDescuento(0);
 		return service.insertarDescuento(d);
+	}
+	
+	@PutMapping(path = "/{id}")
+	public DescuentoCU actualizarDescuento(@PathVariable("id") int id, @RequestBody DescuentoCU d) {
+		d.setId(id);
+		d.setDescuento(0);
+		return service.actualizarDescuento(d);
 	}
 }

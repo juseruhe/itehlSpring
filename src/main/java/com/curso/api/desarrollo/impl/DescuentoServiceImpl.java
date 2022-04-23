@@ -65,8 +65,31 @@ public class DescuentoServiceImpl implements DescuentoService {
 			d.setDescuento(0);
 			return DRepository.save(d);
 		}
+}
 
-	
+	@Override
+	public DescuentoCU actualizarDescuento(DescuentoCU d) {
+		CursoModalidadCU cm = cursoModalidadCURepository.findById(d.getCurso_modalidad_id());
+		Curso c = cursoRepository.findById(cm.getCurso_id());
+		Modalidad m = modalidadRepository.findById(cm.getModalidad_id());
+
+		switch (m.getNombre()) {
+		case "Privado":
+			d.setDescuento(c.getCosto() - (c.getCosto() * 0.1));
+			return  DRepository.save(d);
+		case "On Demand":
+			d.setDescuento(c.getCosto() - (c.getCosto() * 0.2));
+			d = DRepository.save(d);
+			return DRepository.save(d);
+		case "Online":
+			d.setDescuento(c.getCosto() - (c.getCosto() * 0.3));
+			d = DRepository.save(d);
+			 return DRepository.save(d);
+		default:
+			d.setDescuento(0);
+			return DRepository.save(d);
+		}
 	}
+	
 
 }

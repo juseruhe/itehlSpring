@@ -9,4 +9,5 @@ public interface DescuentoService {
 
  List<Descuento> mostrarDescuentos();
  DescuentoCU insertarDescuento(DescuentoCU d);
+ DescuentoCU actualizarDescuento(DescuentoCU d);
 } 
