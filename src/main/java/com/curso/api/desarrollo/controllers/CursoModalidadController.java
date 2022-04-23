@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.curso.api.desarrollo.models.CursoModalidad;
+import com.curso.api.desarrollo.models.CursoModalidadCU;
 import com.curso.api.desarrollo.service.CursoModalidadService;
 
 @RestController
@@ -28,7 +30,7 @@ public class CursoModalidadController {
 	}
 	
 	@PostMapping
-	public CursoModalidad insertarCursoModalidad(@RequestBody CursoModalidad cm) {
+	public CursoModalidadCU insertarCursoModalidad(@RequestBody CursoModalidadCU cm) {
 		return service.insertarCursoModalidad(cm);
 	}
 	
@@ -38,13 +40,15 @@ public class CursoModalidadController {
 	}
 	
 	@PutMapping(path = "/{id}")
-	public CursoModalidad actualizarCursoModalidad(@PathVariable("id") int id,@RequestBody CursoModalidad cm) {
+	public CursoModalidadCU actualizarCursoModalidad(@PathVariable("id") int id,@RequestBody CursoModalidadCU cm) {
 		cm.setId(id);
 		return service.actualizarCursoModalidad(cm);
 	}
 	
 	@DeleteMapping(path = "/{id}")
-	public CursoModalidad eliminarCursoModalidad(@PathVariable("id") int id) {
+	public CursoModalidadCU eliminarCursoModalidad(@PathVariable("id") int id) {
 		return service.eliminarCursoModalidad(id);
 	}
+	
+
 }

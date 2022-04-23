@@ -36,11 +36,6 @@ private String descripcion;
 @Column
 private String dirigido_a;
 
-@JsonIgnore
-@OneToMany(mappedBy = "curso" )
-private List<CursoModalidad> cursos_modalidades;
-
-
 public int getId() {
 	return id;
 }
@@ -80,15 +75,6 @@ public String getDirigido_a() {
 public void setDirigido_a(String dirigido_a) {
 	this.dirigido_a = dirigido_a;
 }
-
-public List<CursoModalidad> getCursos_modalidades() {
-	return cursos_modalidades;
-}
-
-public void setCursos_modalidades(List<CursoModalidad> cursos_modalidades) {
-	this.cursos_modalidades = cursos_modalidades;
-}
-
 
 
 }

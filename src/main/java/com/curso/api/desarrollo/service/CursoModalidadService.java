@@ -2,13 +2,17 @@ package com.curso.api.desarrollo.service;
 
 import java.util.List;
 
+
 import com.curso.api.desarrollo.models.CursoModalidad;
+import com.curso.api.desarrollo.models.CursoModalidadCU;
 
 public interface CursoModalidadService {
 	
   List<CursoModalidad> mostrarCursosModalidades();
-  CursoModalidad insertarCursoModalidad(CursoModalidad cm);
+  CursoModalidadCU insertarCursoModalidad(CursoModalidadCU cm);
   CursoModalidad mostrarCursoModalidad(int id);
-  CursoModalidad actualizarCursoModalidad(CursoModalidad cm);
-  CursoModalidad eliminarCursoModalidad(int id);
+  CursoModalidadCU actualizarCursoModalidad(CursoModalidadCU cm);
+  CursoModalidadCU eliminarCursoModalidad(int id);
+ 
+ 
 }

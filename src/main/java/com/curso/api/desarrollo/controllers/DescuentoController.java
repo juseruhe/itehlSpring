@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.api.desarrollo.models.Curso;
 import com.curso.api.desarrollo.models.Descuento;
+import com.curso.api.desarrollo.models.DescuentoCU;
 import com.curso.api.desarrollo.models.Modalidad;
 import com.curso.api.desarrollo.service.DescuentoService;
 
@@ -27,7 +28,8 @@ public class DescuentoController {
 	}
 	
 	@PostMapping
-	public  Descuento insertarDescuento(@RequestBody Descuento d) {
-		return d;
+	public  DescuentoCU insertarDescuento(@RequestBody DescuentoCU d) {
+		d.setDescuento(0);
+		return service.insertarDescuento(d);
 	}
 }

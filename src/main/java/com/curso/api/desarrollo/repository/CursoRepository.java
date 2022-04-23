@@ -11,5 +11,6 @@ public interface CursoRepository extends Repository<Curso,Integer> {
    Curso  save(Curso c);
    Curso  findById(int id);
    void   delete(Curso c);
-	
+   
+
 }
